@@ -1,0 +1,13 @@
+{% if form %}
+  <form action="" method="POST">
+    {% csrf_token %}
+    <table>
+      {{form.as_table}}
+    </table>
+    <input type="submit" value="edit"/>
+</form>
+{% else %}
+
+  No such form.
+
+{% endif %}

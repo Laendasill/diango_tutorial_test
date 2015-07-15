@@ -1,0 +1,27 @@
+{% if form %}
+
+<form action="" method="POST">
+  <table>
+    <tr>
+      <th> Question_text </th>
+      <th> Quesion date </th>
+        <th> edit </th>
+    </tr>
+  {%for field, id in zipped %}
+    <tr>
+    <div class="FieldWrapper">
+
+    <td>{{field.errors }}<td>
+    <td> {{field }}<td>
+    <td><a href="/polls/{{id.id}}/edit/"> edit</a></td>
+  </div>
+</tr>
+
+  {%endfor%}
+</table>
+
+  {% else %}
+
+  No questions found
+
+  {%endif%}
